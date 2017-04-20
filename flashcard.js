@@ -1,8 +1,15 @@
+var ClozeCards = []
+var BasicCards = []
+
 function BasicCard(front, back){
-    if (!(this instanceof BasicCard))
-        return new BasicCard(front, back)
-    this.front = front
-    this.back = back
+  if (!(this instanceof BasicCard))
+      return new BasicCard(front, back)
+  this.front = front
+  this.back = back
+  BasicCards.push({
+    front: this.front,
+    back: this.back
+  })
 }
 
 var firstPresident = BasicCard(
@@ -22,6 +29,11 @@ function ClozeCard(text, cloze){
   }
   var cutoff = this.cloze.length
   this.partial = '...' + this.fullText.slice(cutoff)
+  ClozeCards.push({
+    fullText: this.fullText,
+    cloze: this.cloze,
+    partial: this.partial
+  })
 }
 
 var firstPresidentCloze = ClozeCard(
@@ -34,3 +46,4 @@ var brokenCloze = ClozeCard(
     "George Washington was the first president of the United States.", "poop string");
 
 console.log("brokenCloze.fullText: " + brokenCloze.fullText);
+console.log(BasicCards)
