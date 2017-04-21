@@ -6,7 +6,7 @@ CREATE TABLE basiccards (
 
 CREATE TABLE clozecards (
   id        INT PRIMARY KEY AUTO_INCREMENT,
-  fulltext  TEXT NOT NULL,
+  fulltxt  TEXT NOT NULL,
   cloze     TEXT NOT NULL,
-  partial   TEXT NOT NULL
+  part   TEXT NOT NULL
 )
